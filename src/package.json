@@ -1,0 +1,16 @@
+{
+  "name": "congcongrongrong-exam-planner",
+  "version": "1.0.0",
+  "description": "B part: multi-subject exam planning, priority calculation, and dynamic adjustment logic.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/sampleData.js"
+  },
+  "keywords": [
+    "exam",
+    "planner",
+    "study"
+  ],
+  "license": "MIT"
+}
