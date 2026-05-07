@@ -1,0 +1,28 @@
+# 忽略图片文件
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+
+# 忽略文档文件
+*.pdf
+*.docx
+*.doc
+*.txt
+
+# 忽略临时文件
+~$*
+*.tmp
+*.swp
+*.bak
+
+# 忽略目录
+division_render_check/
+docx_render_check/
+tmp_pdf_preview/
+
+# 忽略日志和缓存
+node_modules/
+*.log
+.cache/

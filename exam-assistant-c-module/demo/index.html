@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>从从容容考试助手 - C 模块演示</title>
+    <link rel="stylesheet" href="./styles.css?v=20260507-zero-timer" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">C 模块：AI 学习内容生成</p>
+          <h1>把复习任务变成可直接学习的材料</h1>
+          <p class="lead">
+            当前面的规划模块告诉系统“今天复习什么”后，C 模块负责生成速记卡、自测题、闪卡、播客和高频考点分析。
+          </p>
+        </div>
+        <div class="summary">
+          <span>输入</span>
+          <strong>今日多科计划 + 各科资料</strong>
+          <span>输出</span>
+          <strong>可直接学习的多科学习包</strong>
+        </div>
+      </section>
+
+      <section class="panel daily-pack-panel">
+        <div class="panel-title">
+          <span>今日多科配置与学习包</span>
+          <button type="button" id="generateDailyPack">一键生成今日学习包</button>
+        </div>
+
+        <div class="daily-plan">
+          <article>
+            <strong>高数</strong>
+            <label>
+              知识点
+              <input data-daily-topic="0" value="导数" />
+            </label>
+            <label>
+              时长
+              <input type="number" min="10" step="5" data-daily-minutes="0" value="96" />
+            </label>
+            <small>来源：笔记 + 真实高数试卷</small>
+            <label class="file-upload">
+              上传资料
+              <input type="file" multiple data-daily-files="0" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.md,.png,.jpg,.jpeg" />
+            </label>
+            <div class="file-list" data-file-list="0">未上传文件</div>
+          </article>
+          <article>
+            <strong>会计学原理</strong>
+            <label>
+              知识点
+              <input data-daily-topic="1" value="借贷记账法" />
+            </label>
+            <label>
+              时长
+              <input type="number" min="10" step="5" data-daily-minutes="1" value="66" />
+            </label>
+            <small>来源：会计循环真题案例</small>
+            <label class="file-upload">
+              上传资料
+              <input type="file" multiple data-daily-files="1" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.md,.png,.jpg,.jpeg" />
+            </label>
+            <div class="file-list" data-file-list="1">未上传文件</div>
+          </article>
+          <article>
+            <strong>英语</strong>
+            <label>
+              知识点
+              <input data-daily-topic="2" value="阅读理解" />
+            </label>
+            <label>
+              时长
+              <input type="number" min="10" step="5" data-daily-minutes="2" value="48" />
+            </label>
+            <small>来源：阅读技巧笔记</small>
+            <label class="file-upload">
+              上传资料
+              <input type="file" multiple data-daily-files="2" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.md,.png,.jpg,.jpeg" />
+            </label>
+            <div class="file-list" data-file-list="2">未上传文件</div>
+          </article>
+          <article>
+            <strong>马克思主义原理</strong>
+            <label>
+              知识点
+              <input data-daily-topic="3" value="实践与认识" />
+            </label>
+            <label>
+              时长
+              <input type="number" min="10" step="5" data-daily-minutes="3" value="30" />
+            </label>
+            <small>来源：背诵材料与答题模板</small>
+            <label class="file-upload">
+              上传资料
+              <input type="file" multiple data-daily-files="3" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.md,.png,.jpg,.jpeg" />
+            </label>
+            <div class="file-list" data-file-list="3">未上传文件</div>
+          </article>
+        </div>
+
+        <div class="daily-pack-result" id="dailyPackResult">
+          <p class="empty">点击按钮后，C 模块会根据今日多科计划批量生成学习材料。</p>
+        </div>
+      </section>
+
+      <section class="handoff">
+        <h2>给 B / D 的对接方式</h2>
+        <div class="handoff-grid">
+          <article>
+            <h3>B 给 C</h3>
+            <code>{ subject, topic, content }</code>
+            <p>B 模块根据今日计划决定用户要复习哪门课、哪个知识点。</p>
+          </article>
+          <article>
+            <h3>C 给 D</h3>
+            <code>cheat_sheet / quiz / flashcards</code>
+            <p>C 模块输出结构化 JSON，D 模块直接渲染成页面卡片。</p>
+          </article>
+          <article>
+            <h3>答辩主线</h3>
+            <code>计划 → 材料 → 学习</code>
+            <p>规划不是终点，C 模块让用户马上进入学习动作。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../src/aiTools.js?v=20260507-zero-timer"></script>
+    <script src="./app.js?v=20260507-zero-timer"></script>
+  </body>
+</html>
